@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>City Weather</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+<script src="js/script.js"></script>
+<div>
+    <div>
+        <h2 th:if="${city != null}" th:text="${city.getName()}"></h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Temperature</th>
+                <th scope="col">Feels Like</th>
+                <th scope="col">Temp. Min.</th>
+                <th scope="col">Temp. Max.</th>
+                <th scope="col">Humidity</th>
+                <th scope="col">Pressure</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${city != null}">
+                <td th:text="${city.getMain().getTemp()}"></td>
+                <td th:text="${city.getMain().getFeels_like()}"></td>
+                <td th:text="${city.getMain().getTemp_min()}"></td>
+                <td th:text="${city.getMain().getTemp_max()}"></td>
+                <td th:text="${city.getMain().getHumidity()}"></td>
+                <td th:text="${city.getMain().getPressure()}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:if="${citynotfound != null}">
+        <h2 th:text="${citynotfound}"></h2>
+    </div>
+    <div>
+        <input id="search-input" type="text" placeholder="Enter City Name">
+        <input type="submit" value="Search" onclick="search()">
+    </div>
+    <div>
+        <input type="button" value="History" onclick="window.location = 'http://localhost:8080/history'">
+    </div>
+
+</div>
+</body>
+</html>
