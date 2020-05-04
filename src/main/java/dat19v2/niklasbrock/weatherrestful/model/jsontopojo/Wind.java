@@ -1,4 +1,4 @@
-package dat19v2.niklasbrock.weatherrestful.model;
+package dat19v2.niklasbrock.weatherrestful.model.jsontopojo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -44,9 +44,4 @@ public class Wind
         this.speed = speed;
     }
 
-    @Override
-    public String toString()
-    {
-        return "ClassPojo [deg = "+deg+", speed = "+speed+"]";
-    }
 }

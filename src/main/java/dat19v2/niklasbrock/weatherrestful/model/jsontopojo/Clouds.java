@@ -1,4 +1,4 @@
-package dat19v2.niklasbrock.weatherrestful.model;
+package dat19v2.niklasbrock.weatherrestful.model.jsontopojo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,9 +32,4 @@ public class Clouds
         this.alll = alll;
     }
 
-    @Override
-    public String toString()
-    {
-        return "ClassPojo [all = "+ alll +"]";
-    }
 }

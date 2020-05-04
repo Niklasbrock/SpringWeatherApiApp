@@ -1,44 +1,53 @@
-package dat19v2.niklasbrock.weatherrestful.model;
+package dat19v2.niklasbrock.weatherrestful.model.jsontopojo;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class Area
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long primaryKey;
+
     private String visibility;
 
     private String timezone;
 
-    @OneToOne
+    @OneToOne (cascade = CascadeType.ALL)
     private Main main;
 
-    @OneToOne
+    @OneToOne (cascade = CascadeType.ALL)
     private Clouds clouds;
 
-    @OneToOne
+    @OneToOne (cascade = CascadeType.ALL)
     private Sys sys;
 
     private String dt;
 
-    @OneToOne
+    @OneToOne (cascade = CascadeType.ALL)
     private Coord coord;
 
-    @OneToOne
+    @ManyToOne
     private Weather[] weather;
 
     private String name;
 
     private String cod;
 
-    @Id
     private String id;
 
     private String base;
 
-    @OneToOne
+    @OneToOne (cascade = CascadeType.ALL)
     private Wind wind;
+
+    public long getPrimaryKey() {
+        return primaryKey;
+    }
+
+    public void setPrimaryKey(long primaryKey) {
+        this.primaryKey = primaryKey;
+    }
 
     public String getVisibility()
     {
@@ -170,9 +179,4 @@ public class Area
         this.wind = wind;
     }
 
-    @Override
-    public String toString()
-    {
-        return "ClassPojo [visibility = "+visibility+", timezone = "+timezone+", main = "+main+", clouds = "+clouds+", sys = "+sys+", dt = "+dt+", coord = "+coord+", weather = "+weather+", name = "+name+", cod = "+cod+", id = "+id+", base = "+base+", wind = "+wind+"]";
-    }
 }

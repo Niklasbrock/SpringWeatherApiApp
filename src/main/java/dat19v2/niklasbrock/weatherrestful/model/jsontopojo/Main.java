@@ -1,4 +1,4 @@
-package dat19v2.niklasbrock.weatherrestful.model;
+package dat19v2.niklasbrock.weatherrestful.model.jsontopojo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -92,10 +92,5 @@ public class Main
         this.temp_max = temp_max;
     }
 
-    @Override
-    public String toString()
-    {
-        return "ClassPojo [temp = "+temp+", temp_min = "+temp_min+", humidity = "+humidity+", pressure = "+pressure+", feels_like = "+feels_like+", temp_max = "+temp_max+"]";
-    }
 }
 

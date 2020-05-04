@@ -1,6 +1,8 @@
-package dat19v2.niklasbrock.weatherrestful.model;
+package dat19v2.niklasbrock.weatherrestful.model.jsontopojo;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -12,10 +14,21 @@ public class Sys
 
     private String sunset;
 
-    @Id
     private String id;
 
     private String type;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long primaryKey;
+
+    public long getPrimaryKey() {
+        return primaryKey;
+    }
+
+    public void setPrimaryKey(long primaryKey) {
+        this.primaryKey = primaryKey;
+    }
 
     public String getCountry ()
     {
@@ -67,9 +80,4 @@ public class Sys
         this.type = type;
     }
 
-    @Override
-    public String toString()
-    {
-        return "ClassPojo [country = "+country+", sunrise = "+sunrise+", sunset = "+sunset+", id = "+id+", type = "+type+"]";
-    }
 }

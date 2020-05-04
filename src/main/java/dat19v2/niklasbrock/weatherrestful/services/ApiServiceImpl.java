@@ -1,6 +1,6 @@
 package dat19v2.niklasbrock.weatherrestful.services;
 
-import dat19v2.niklasbrock.weatherrestful.model.Area;
+import dat19v2.niklasbrock.weatherrestful.model.jsontopojo.Area;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 

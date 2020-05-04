@@ -24,14 +24,14 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="city: ${cities}">
-                <td th:text="${city.getName()}"></td>
-                <td th:text="${city.getMain().getTemp()}"></td>
-                <td th:text="${city.getMain().getFeels_like()}"></td>
-                <td th:text="${city.getMain().getTemp_min()}"></td>
-                <td th:text="${city.getMain().getTemp_max()}"></td>
-                <td th:text="${city.getMain().getHumidity()}"></td>
-                <td th:text="${city.getMain().getPressure()}"></td>
+            <tr th:each="report: ${weatherReports}">
+                <td th:text="${report.getName()}"></td>
+                <td th:text="${report.getTemp() + '°C'}"></td>
+                <td th:text="${report.getFeels_like() + '°C'}"></td>
+                <td th:text="${report.getTemp_min() + '°C'}"></td>
+                <td th:text="${report.getTemp_max() + '°C'}"></td>
+                <td th:text="${report.getHumidity() + '%'}"></td>
+                <td th:text="${report.getPressure() + 'hpa'}"></td>
             </tr>
             </tbody>
         </table>
